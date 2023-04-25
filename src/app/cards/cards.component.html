@@ -1,0 +1,12 @@
+<div class="tp-wrapper">
+    <div class="tp-box" (click)="toggleFlip()" [@flipState]="flip">
+        <div class="tp-box__side tp-box__front" style="color: black;">
+            <p>{{cards[currentCard].prompt}}</p>
+        </div>
+        <div class="tp-box__side tp-box__back">
+            <p>{{cards[currentCard].answer}}</p>
+        </div>
+    </div>
+    <a style="color: black" (click)="decreaseCard()">Previous card &larr;</a><a (click)="increaseCard()"
+        style="margin-right: 0px; float: right;">Next Card &rarr;</a>
+</div>

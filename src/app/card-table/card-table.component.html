@@ -1,0 +1,18 @@
+<table style="width: 100%">
+    <th style="width:5%">Id:</th>
+    <th style="width:5%">Date:</th>
+    <th style="width:10%">Category:</th>
+    <th style="width:30%">Prompt:</th>
+    <th style="width:30%">Answer:</th>
+    <tr *ngFor="let card of cards">
+        <td style="text-align: center;">{{card.cardID}}</td>
+        <td style="text-align: center;">{{card.dayCreated | date: 'shortDate'}}</td>
+        <td style="text-align: center;">{{card.category}}</td>
+        <td>{{card.prompt}}</td>
+
+        <td *ngIf="card.show; else default"><a (click)="card.show = false">{{card.answer}}</a></td>
+        <ng-template #default>
+            <td><a (click)="card.show = true">Click to show answer</a></td>
+        </ng-template>
+    </tr>
+</table>
