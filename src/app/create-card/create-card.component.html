@@ -1,26 +1,30 @@
-<div (click)="reload()">
+<div (click)="reload()" style="height: 80%;">
     <form #cardForm="ngForm" (ngSubmit)="onSubmit()" style="text-align: center;">
-        <table style="width: 30%; background-color: white; opacity: 1; margin-left: 35%; margin-top: 5%;"
+        <table style="width: 30%;background-color: white; opacity: 1; margin-left: 35%; margin-top: 5%;"
             (click)="stopPropogation()">
-            <tr>Updating Card: #{{chosenCard.cardID}}</tr>
+            <tr>Creating new card</tr>
+            <br>
             <tr>
-                <label style="color:black">
+                <label style="color:black;">
                     Subject:
                     <input type="text" [(ngModel)]="chosenCard.category" name="Category" required>
                 </label>
             </tr>
+            <br>
             <tr>
                 <label style="color:black">
                     Prompt:
                     <input type="text" [(ngModel)]="chosenCard.prompt" name="Prompt" required>
                 </label>
             </tr>
+            <br>
             <tr>
                 <label style="color:black">
                     Answer:
                     <input type="text" [(ngModel)]="chosenCard.answer" name="Answer" required>
                 </label>
             </tr>
+            <br>
             <tr>
                 <button (click)="onSubmit()">Update Card</button>
             </tr>
