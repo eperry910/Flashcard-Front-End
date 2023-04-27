@@ -1,11 +1,14 @@
-<table style="width: 100%">
+<table style="width: 100%; margin-top: 0;">
+    <div *ngIf="updateCard" (click)="updateCard=false">
+        <app-change-card [chosenCard]="selectedCard"></app-change-card>
+    </div>
     <th style="width:5%">Id:</th>
     <th style="width:5%">Date:</th>
     <th style="width:10%">Category:</th>
     <th style="width:30%">Prompt:</th>
-    <th style="width:30%">Answer:</th>
+    <th style="width:20%">Answer:</th>
     <tr *ngFor="let card of cards">
-        <td style="text-align: center;">{{card.cardID}}</td>
+        <td style="text-align: center;" (click)="selectedCard=card; updateCard = true"><a>{{card.cardID}}</a></td>
         <td style="text-align: center;">{{card.dayCreated | date: 'shortDate'}}</td>
         <td style="text-align: center;">{{card.category}}</td>
         <td>{{card.prompt}}</td>

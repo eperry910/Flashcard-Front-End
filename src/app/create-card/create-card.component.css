@@ -1,0 +1,19 @@
+:host {
+    position: absolute;
+    top: 5%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    opacity: 0.8;
+}
+
+.cardForm {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.fullWidth {
+    width: 100%;
+}

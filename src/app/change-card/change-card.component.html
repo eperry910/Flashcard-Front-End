@@ -1,0 +1,30 @@
+<div (click)="reload()">
+    <form #cardForm="ngForm" (ngSubmit)="onSubmit()" style="text-align: center;">
+        <table style="width: 30%; background-color: white; opacity: 1; margin-left: 35%; margin-top: 5%;"
+            (click)="stopPropogation()">
+            <tr>Updating Card: #{{chosenCard.cardID}}</tr>
+            <tr>
+                <label style="color:black">
+                    Subject:
+                    <input type="text" [(ngModel)]="chosenCard.category" name="Category" required>
+                </label>
+            </tr>
+            <tr>
+                <label style="color:black">
+                    Prompt:
+                    <input type="text" [(ngModel)]="chosenCard.prompt" name="Prompt" required>
+                </label>
+            </tr>
+            <tr>
+                <label style="color:black">
+                    Answer:
+                    <input type="text" [(ngModel)]="chosenCard.answer" name="Answer" required>
+                </label>
+            </tr>
+            <tr>
+                <button style="margin-right: 3%;" (click)="onSubmit()">Update Card</button>
+                <button style="margin-left: 3%;" (click)="deleteCard()">Delete Card</button>
+            </tr>
+        </table>
+    </form>
+</div>

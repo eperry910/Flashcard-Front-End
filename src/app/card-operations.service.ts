@@ -13,4 +13,14 @@ export class CardOperationsService {
   public getAllCards(): Observable<Array<Flashcard>> {
     return this.http.get(this.apiRoot + '/Flashcard') as Observable<Array<Flashcard>>
   }
+  public updateCard(cardToUpdate: Flashcard): Observable<void> {
+    return this.http.put(this.apiRoot + '/Flashcard/UpdateCard', cardToUpdate) as unknown as Observable<void>
+  }
+  public deleteCard(cardToDelete: Flashcard): Observable<void> {
+    return this.http.delete(this.apiRoot + '/Flashcard/DeleteCards', { body: cardToDelete }) as unknown as Observable<void>
+  }
+  public createCard(cardToCreate: Flashcard): Observable<void> {
+    return this.http.post(this.apiRoot + '/Flashcard/CreateCards', cardToCreate) as unknown as Observable<void>
+
+  }
 }
