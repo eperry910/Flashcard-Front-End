@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { Flashcard } from '../flashcard';
 import { CardOperationsService } from '../card-operations.service';
+import { HttpClient } from '@angular/common/http';
 
 
 
@@ -23,7 +24,7 @@ import { CardOperationsService } from '../card-operations.service';
   ]
 })
 export class CardsComponent implements OnInit {
-  constructor(private cardOp: CardOperationsService) { }
+  constructor(private cardOp: CardOperationsService, private http: HttpClient) { }
 
   cards: Array<Flashcard> = [];
   currentCard: number = 0

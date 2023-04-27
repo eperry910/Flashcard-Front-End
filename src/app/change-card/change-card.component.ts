@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Flashcard } from '../flashcard';
 import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
 import { CardOperationsService } from '../card-operations.service';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -13,7 +14,7 @@ import { CardOperationsService } from '../card-operations.service';
 export class ChangeCardComponent {
   @Input() chosenCard: any;
   @Output() showWindow = new EventEmitter<boolean>()
-  constructor(private formBuilder: FormBuilder, private cardOps: CardOperationsService) {
+  constructor(private formBuilder: FormBuilder, private cardOps: CardOperationsService, private http: HttpClient) {
 
   }
   onSubmit() {
