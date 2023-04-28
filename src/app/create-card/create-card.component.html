@@ -1,5 +1,5 @@
 <div (click)="reload()" style="height: 80%;">
-    <form #cardForm="ngForm" (ngSubmit)="onSubmit()" style="text-align: center;">
+    <form #cardForm="ngForm" style="text-align: center;">
         <table style="width: 30%;background-color: white; opacity: 1; margin-left: 35%; margin-top: 5%;"
             (click)="stopPropogation()">
             <tr>Creating new card</tr>
@@ -26,7 +26,7 @@
             </tr>
             <br>
             <tr>
-                <button>Create New Card</button>
+                <button (click)="onSubmit()">Create New Card</button>
             </tr>
         </table>
     </form>
